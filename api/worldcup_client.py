@@ -47,8 +47,6 @@ class WorldCupClient:
             if not live_df.empty:
                 live_df = live_df.copy()
 
-                if "completed" in live_df.columns:
-                    live_df = live_df[live_df["completed"] != True]
 
                 required_cols = {
                     "event_id",
@@ -83,7 +81,25 @@ class WorldCupClient:
                             }
                         )
 
-                        fixtures["group"] = "-"
+                        manual_df = self._read_csv_checked(self.fixtures_file)
+
+                        group_map = {}
+
+                        for _, r in manual_df.iterrows():
+                            h = str(r["home_team"])
+                            a = str(r["away_team"])
+                            g = r.get("group", "-")
+
+                            group_map[(h, a)] = g
+                            group_map[(a, h)] = g
+
+                        fixtures["group"] = fixtures.apply(
+                            lambda r: group_map.get(
+                                (str(r["home_team"]), str(r["away_team"])),
+                                "-"
+                            ),
+                            axis=1,
+                        )
 
                         fixtures = fixtures.drop_duplicates(
                             subset=["home_team", "away_team"],

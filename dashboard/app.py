@@ -118,7 +118,6 @@ def flag_img(team, size=24):
     )
 
 
-@st.cache_data
 def load_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
@@ -190,6 +189,26 @@ market_df = load_csv(MARKET_FILE)
 scores_df = load_csv(SCORES_FILE)
 accuracy_df = load_csv(ACCURACY_FILE)
 
+if not accuracy_df.empty:
+    bool_cols = [
+        "matched",
+        "result_hit",
+        "top1_hit",
+        "top3_hit",
+        "top5_hit",
+        "top8_hit",
+    ]
+
+    for col in bool_cols:
+        if col in accuracy_df.columns:
+            accuracy_df[col] = (
+                accuracy_df[col]
+                .astype(str)
+                .str.lower()
+                .map({"true": True, "false": False})
+                .fillna(False)
+            )
+
 if not score_df.empty:
     score_df["match_label"] = score_df["home_team"] + " vs " + score_df["away_team"]
 
@@ -238,15 +257,7 @@ with st.sidebar:
     st.markdown("### Forecast System")
     st.divider()
 
-    if st.button("🔄 Refresh Data", use_container_width=True):
-        with st.spinner("Running full pipeline..."):
-            result = run_pipeline()
-        if result.returncode == 0:
-            st.success("Forecast updated.")
-            st.cache_data.clear()
-        else:
-            st.error("Pipeline failed.")
-            st.code(result.stderr)
+    st.info("Forecast data updates automatically via GitHub Actions.")
 
     st.divider()
     page = st.radio(
@@ -382,7 +393,19 @@ def render_score_forecast():
     if score_df.empty:
         return "<div class='panel'>Missing score forecast.</div>"
 
-    df = score_df.sort_values(["match_id", "rank"]).copy()
+    df = score_df.copy()
+
+    if "completed" in df.columns:
+        df = df[df["completed"] != True]
+
+    if "commence_dt" in df.columns:
+        df = df.sort_values(["commence_dt", "match_id", "rank"])
+    else:
+        df = df.sort_values(["match_id", "rank"])
+
+    if df.empty:
+        return "<div class='panel'>No active score forecast available.</div>"
+
     first_match = df["match_label"].iloc[0]
     m = df[df["match_label"] == first_match].sort_values("rank").head(5)
     first = m.iloc[0]
@@ -976,13 +999,19 @@ def dashboard_html():
         if len(matched) > 0:
             accuracy = pct(matched["result_hit"].mean())
 
-    last_updated = ""
-    if not scores_df.empty and "last_update" in scores_df.columns:
-        vals = scores_df["last_update"].dropna()
-        if len(vals):
-            last_updated = str(vals.iloc[-1])
+    try:
+        ts = SCORES_FILE.stat().st_mtime
+
+        last_updated = datetime.fromtimestamp(
+            ts,
+            ZoneInfo("America/Los_Angeles")
+        ).strftime("%Y-%m-%d %H:%M:%S PDT")
+
+    except Exception:
+        last_updated = "-"
 
     return f"""
+
     <html>
     <head>
     <style>
@@ -1653,11 +1682,7 @@ elif page == "Match Predictions":
             df = df[df["completed"] != True]
 
         if "commence_dt" in df.columns:
-            now_utc = pd.Timestamp.utcnow()
-            df = df[
-                (df["commence_dt"].notna()) &
-                (df["commence_dt"] >= now_utc)
-            ]
+            
             df = df.sort_values("commence_dt")
 
         cards = "".join(
