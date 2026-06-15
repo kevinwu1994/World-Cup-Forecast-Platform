@@ -20,19 +20,19 @@ https://world-cup-forecast-platform.streamlit.app/
 
 ## Dashboard Overview
 
-![Dashboard Overview](screenshots/dashboard_home.png)
+<img src="https://raw.githubusercontent.com/kevinwu1994/World-Cup-Forecast-Platform/main/screenshots/dashboard_home.png" width="1000">
 
 ---
 
 ## Score Forecast Engine
 
-![Score Forecast](screenshots/score_forecast.png)
+<img src="https://raw.githubusercontent.com/kevinwu1994/World-Cup-Forecast-Platform/main/screenshots/score_forecast.png" width="1000">
 
 ---
 
 ## Model Validation & Accuracy Tracking
 
-![Model Accuracy](screenshots/model_accuracy_1.png)
+<img src="https://raw.githubusercontent.com/kevinwu1994/World-Cup-Forecast-Platform/main/screenshots/model_accuracy_1.png" width="1000">
 
 ---
 
