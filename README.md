@@ -1,43 +1,181 @@
-# World Cup Forecast Platform
+# ⚽ World Cup Forecast Platform
 
-A Streamlit-based football analytics and forecasting platform for international tournament prediction.
+AI-Powered Football Analytics & Forecasting System
 
-The system combines ELO ratings, expected goals, Poisson score modeling, market-implied probability adjustment, and Monte Carlo simulation to generate match probabilities, score forecasts, group-stage qualification probabilities, knockout previews, champion probabilities, model-vs-market comparisons, and historical accuracy tracking.
-
-> This project is for analytics, research, and educational purposes only. It does not provide betting recommendations.
+ELO Ratings • Expected Goals (xG) • Poisson Modeling • Market Odds Adjustment • Monte Carlo Simulation
 
 ---
 
 ## Live Dashboard
 
-Streamlit Cloud deployment link will be added after deployment.
+🌐 https://world-cup-forecast-platform.streamlit.app/
 
 ---
 
-## Project Highlights
+## Dashboard Preview
 
-- Match outcome forecasting: home win, draw, away win
-- Exact-score probability ranking using Poisson modeling
-- Expected goals conversion engine
-- ELO-based team strength framework
-- Market odds adjustment layer
-- Monte Carlo group-stage and tournament simulation
-- Champion probability ranking
-- Model accuracy tracking against completed match results
-- Streamlit dashboard with interactive navigation
+### Dashboard Overview
+
+![Dashboard](screenshots/dashboard_home.png)
+
+### Score Forecast
+
+![Score Forecast](screenshots/score_forecast.png)
+
+### Model Accuracy
+
+![Model Accuracy](screenshots/model_accuracy.png)
+
+---
+
+## Project Motivation
+
+Forecasting international football tournaments is a challenging quantitative problem. Team strength, expected goals, tournament structure, and market sentiment all influence match outcomes.
+
+This project was built to create a fully automated forecasting platform capable of generating:
+
+* Match outcome probabilities
+* Exact-score forecasts
+* Group-stage qualification probabilities
+* Knockout-stage projections
+* Championship probabilities
+* Historical model validation
+
+The goal is to combine quantitative modeling, simulation techniques, and interactive analytics into a production-style forecasting dashboard.
+
+> This project is intended for analytics, research, and educational purposes only. It does not provide betting recommendations.
+
+---
+
+## Forecasting Pipeline
+
+```text
+Football Data
+      ↓
+ELO Rating Engine
+      ↓
+Expected Goals (xG) Model
+      ↓
+Poisson Score Distribution
+      ↓
+Market Odds Adjustment
+      ↓
+Monte Carlo Tournament Simulation
+      ↓
+Forecast Reports
+      ↓
+Streamlit Dashboard
+```
+
+---
+
+## Methodology
+
+### 1. ELO Rating Framework
+
+Team strength is estimated using ELO ratings to quantify relative performance differences between national teams.
+
+### 2. Expected Goals (xG) Engine
+
+Expected goals are generated from offensive and defensive team ratings and used as scoring expectations.
+
+### 3. Poisson Score Modeling
+
+Goal distributions are modeled using Poisson probabilities to estimate exact-score outcomes.
+
+### 4. Market Adjustment Layer
+
+Bookmaker odds are incorporated as an additional information source to improve calibration.
+
+### 5. Monte Carlo Simulation
+
+10,000+ tournament simulations are executed to estimate:
+
+* Group qualification probability
+* Knockout progression probability
+* Championship probability
+
+---
+
+## Current Capabilities
+
+✅ Match outcome forecasting
+
+✅ Exact-score probability forecasting
+
+✅ Expected goals estimation
+
+✅ Group-stage qualification simulation
+
+✅ Knockout bracket projection
+
+✅ Championship probability ranking
+
+✅ Model vs Market comparison
+
+✅ Historical forecast validation
+
+✅ Interactive Streamlit dashboard
+
+---
+
+## Dashboard Features
+
+### Match Predictions
+
+Forecasts home win, draw, and away win probabilities.
+
+### Score Forecast
+
+Generates exact-score probability rankings using Poisson distributions.
+
+### Group Stage Overview
+
+Simulates qualification probabilities for all teams.
+
+### Knockout Preview
+
+Projects likely tournament progression paths.
+
+### Champion Race
+
+Ranks teams by championship probability.
+
+### Model Accuracy
+
+Tracks historical forecasting performance and prediction hit rates.
+
+### Model vs Market
+
+Compares model probabilities against market-implied probabilities.
 
 ---
 
 ## Technical Stack
 
-- Python
-- Pandas / NumPy
-- SciPy / scikit-learn
-- Plotly
-- Streamlit
-- Requests
-- Football data and odds API clients
-- CSV-based reporting pipeline
+### Data & Modeling
+
+* Python
+* Pandas
+* NumPy
+* SciPy
+* scikit-learn
+
+### Visualization
+
+* Streamlit
+* Plotly
+
+### Data Sources
+
+* Football Data APIs
+* Market Odds APIs
+
+### Simulation
+
+* Monte Carlo Simulation
+* Poisson Probability Models
+* ELO Rating Systems
 
 ---
 
@@ -49,11 +187,11 @@ World Cup Forecast Platform/
 ├── dashboard/           # Streamlit dashboard
 ├── data/                # Raw and processed input data
 ├── models/              # Forecasting and score probability models
-├── reports/             # Generated CSV outputs used by the dashboard
-├── screenshots/         # Dashboard screenshots for documentation
+├── reports/             # Dashboard output reports
+├── screenshots/         # Dashboard screenshots
 ├── scripts/             # Pipeline entry points
 ├── simulation/          # Monte Carlo simulation logic
-├── validation/          # Accuracy tracking and validation utilities
+├── validation/          # Model validation and accuracy tracking
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -61,21 +199,7 @@ World Cup Forecast Platform/
 
 ---
 
-## Dashboard Pages
-
-- Dashboard Overview
-- Match Predictions
-- Score Forecast
-- Group Stage
-- Knockout Preview
-- Champion Race
-- Recent Results
-- Model Accuracy
-- Model vs Market
-
----
-
-## How to Run Locally
+## Running Locally
 
 Install dependencies:
 
@@ -83,7 +207,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the dashboard:
+Launch the dashboard:
 
 ```bash
 streamlit run dashboard/app.py
@@ -97,37 +221,17 @@ python scripts/main_run_worldcup_pipeline.py
 
 ---
 
-## Data Pipeline
-
-The dashboard reads generated CSV files from the `reports/` directory, including:
-
-```text
-worldcup_adjusted_match_probabilities.csv
-worldcup_predictions.csv
-group_stage_probabilities.csv
-champion_probabilities.csv
-model_vs_market.csv
-worldcup_live_scores.csv
-prediction_accuracy.csv
-```
-
-The pipeline updates these reports before the dashboard is refreshed.
-
----
-
-## Deployment Plan
-
-This project is designed for deployment with:
+## Deployment
 
 ```text
 GitHub Repository
-↓
+        ↓
 Streamlit Community Cloud
-↓
-Public dashboard URL
+        ↓
+Public Dashboard
 ```
 
-Streamlit Cloud should use the following app entry point:
+Dashboard entry point:
 
 ```text
 dashboard/app.py
@@ -135,9 +239,31 @@ dashboard/app.py
 
 ---
 
+## Future Enhancements
+
+* Probability calibration analysis
+* Brier Score evaluation
+* Log-loss tracking
+* Automated daily updates
+* Historical backtesting framework
+* Interactive tournament bracket visualization
+* Team-level analytics pages
+
+---
+
 ## Author
 
-Fenglei Wu
+### Fenglei Wu
 
-M.S. Financial Engineering  
-Quantitative Modeling | Forecasting | Risk Analytics | Data Science
+M.S. Financial Engineering
+Claremont Graduate University
+
+Areas of Interest:
+
+* Quantitative Research
+* Forecasting Models
+* Risk Analytics
+* Data Science
+* Machine Learning
+
+GitHub: https://github.com/kevinwu1994
