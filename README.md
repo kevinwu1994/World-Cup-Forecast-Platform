@@ -10,31 +10,32 @@ Built as an end-to-end quantitative modeling project with automated data pipelin
 
 ## 🌐 Live Dashboard
 
-**Dashboard URL**
-
+**Dashboard URL:**
 https://world-cup-forecast-platform.streamlit.app/
 
 ---
 
-## Dashboard Overview
+## Dashboard Preview
 
-<img src="https://raw.githubusercontent.com/kevinwu1994/World-Cup-Forecast-Platform/main/screenshoots/dashboard_home.png" width="1000">
+### Dashboard Overview
 
----
-
-## Score Forecast Engine
-
-<img src="https://raw.githubusercontent.com/kevinwu1994/World-Cup-Forecast-Platform/main/screenshoots/score_forecast.png" width="1000">
+<img src="screenshoots/dashboard_home.png" width="1000">
 
 ---
 
-## Model Validation & Accuracy Tracking
+### Score Forecast Engine
 
-<img src="https://raw.githubusercontent.com/kevinwu1994/World-Cup-Forecast-Platform/main/screenshoots/model_accuracy_1.png" width="1000">
+<img src="screenshoots/score_forecast.png" width="1000">
 
 ---
 
-# Project Motivation
+### Model Validation & Accuracy Tracking
+
+<img src="screenshoots/model_accuracy_1.png" width="1000">
+
+---
+
+## Project Motivation
 
 Forecasting international football tournaments is a challenging quantitative problem involving:
 
@@ -57,7 +58,7 @@ The objective is to demonstrate practical applications of statistical modeling, 
 
 ---
 
-# Forecasting Architecture
+## Forecasting Architecture
 
 ```text
 Football Data Sources
@@ -86,9 +87,9 @@ Monte Carlo Simulation
 
 ---
 
-# Quantitative Methodology
+## Quantitative Methodology
 
-## 1. ELO Rating Framework
+### 1. ELO Rating Framework
 
 Team strength is estimated using ELO ratings to quantify relative performance differences between national teams.
 
@@ -96,7 +97,7 @@ The model continuously updates strength estimates using historical match perform
 
 ---
 
-## 2. Expected Goals (xG) Engine
+### 2. Expected Goals (xG) Engine
 
 Expected goals are generated from offensive and defensive ratings.
 
@@ -111,7 +112,7 @@ Senegal xG: 0.78
 
 ---
 
-## 3. Poisson Score Modeling
+### 3. Poisson Score Modeling
 
 Match scores are modeled using Poisson distributions.
 
@@ -121,13 +122,13 @@ The score engine estimates probabilities for:
 * 1–0
 * 2–1
 * 3–0
-* etc.
+* Other possible scorelines
 
 and generates ranked exact-score forecasts.
 
 ---
 
-## 4. Market Odds Calibration
+### 4. Market Odds Calibration
 
 Bookmaker probabilities are incorporated as an additional information source.
 
@@ -135,9 +136,9 @@ This calibration layer helps reduce model bias and improve probability realism.
 
 ---
 
-## 5. Monte Carlo Tournament Simulation
+### 5. Monte Carlo Tournament Simulation
 
-The platform executes 10,000+ tournament simulations to estimate:
+The platform executes **10,000+ tournament simulations** to estimate:
 
 * Group-stage qualification probability
 * Knockout-stage advancement probability
@@ -147,7 +148,7 @@ This allows the model to forecast tournament progression beyond individual match
 
 ---
 
-# Platform Features
+## Platform Features
 
 ### Match Prediction Engine
 
@@ -217,55 +218,55 @@ Compares internal model probabilities against market-implied probabilities to id
 
 ---
 
-# Current Coverage
+## Current Coverage
 
-| Metric                 | Coverage                              |
-| ---------------------- | ------------------------------------- |
-| Teams                  | 48                                    |
-| Group Stage Matches    | 72                                    |
-| Tournament Simulations | 10,000+                               |
+| Metric                 |                              Coverage |
+| ---------------------- | ------------------------------------: |
+| Teams                  |                                    48 |
+| Group Stage Matches    |                                    72 |
+| Tournament Simulations |                               10,000+ |
 | Forecast Types         | Match, Score, Qualification, Champion |
-| Dashboard Pages        | 9                                     |
-| Validation Module      | Included                              |
+| Dashboard Pages        |                                     9 |
+| Validation Module      |                              Included |
 
 ---
 
-# Technology Stack
+## Technology Stack
 
-## Programming
+### Programming
 
 * Python
 
-## Data Processing
+### Data Processing
 
 * Pandas
 * NumPy
 
-## Statistical Modeling
+### Statistical Modeling
 
 * SciPy
 * scikit-learn
 
-## Visualization
+### Visualization
 
 * Streamlit
 * Plotly
 
-## Forecasting Methods
+### Forecasting Methods
 
 * ELO Ratings
 * Expected Goals (xG)
 * Poisson Probability Models
 * Monte Carlo Simulation
 
-## External Integrations
+### External Integrations
 
 * Football Data APIs
 * Odds APIs
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 World-Cup-Forecast-Platform/
@@ -275,7 +276,7 @@ World-Cup-Forecast-Platform/
 ├── data/                # Raw and processed datasets
 ├── models/              # Forecasting models
 ├── reports/             # Generated forecasting outputs
-├── screenshots/         # Dashboard screenshots
+├── screenshoots/        # Dashboard screenshots
 ├── scripts/             # Pipeline execution scripts
 ├── simulation/          # Monte Carlo simulation engine
 ├── validation/          # Accuracy tracking framework
@@ -287,7 +288,7 @@ World-Cup-Forecast-Platform/
 
 ---
 
-# Running Locally
+## Running Locally
 
 Install dependencies:
 
@@ -309,7 +310,7 @@ python scripts/main_run_worldcup_pipeline.py
 
 ---
 
-# Deployment
+## Deployment
 
 The platform is deployed using:
 
@@ -331,7 +332,7 @@ dashboard/app.py
 
 ---
 
-# Future Development
+## Future Development
 
 Planned enhancements include:
 
@@ -345,9 +346,9 @@ Planned enhancements include:
 
 ---
 
-# About the Author
+## About the Author
 
-## Fenglei Wu
+### Fenglei Wu
 
 **M.S. Financial Engineering**
 Claremont Graduate University
@@ -361,12 +362,11 @@ Areas of Interest:
 * Machine Learning
 * Sports Analytics
 
-GitHub:
-https://github.com/kevinwu1994
+GitHub: https://github.com/kevinwu1994
 
 ---
 
-### Disclaimer
+## Disclaimer
 
 This project is intended for research, analytics, and educational purposes only.
 
