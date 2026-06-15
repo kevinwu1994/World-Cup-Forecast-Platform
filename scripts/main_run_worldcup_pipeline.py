@@ -7,19 +7,19 @@ import pandas as pd
 
 PIPELINE_STEPS = [
 
-    "main_fetch_worldcup_scores.py",
+    "scripts/main_fetch_worldcup_scores.py",
 
-    "main_worldcup_predict.py",
+    "scripts/main_worldcup_predict.py",
 
-    "main_fetch_worldcup_odds.py",
+    "scripts/main_fetch_worldcup_odds.py",
 
-    "main_market_adjusted_predictions.py",
+    "scripts/main_market_adjusted_predictions.py",
 
-    "main_prediction_accuracy.py",
+    "scripts/main_prediction_accuracy.py",
 
-    "main_group_montecarlo.py",
+    "scripts/main_group_montecarlo.py",
 
-    "main_knockout_simulator.py",
+    "scripts/main_knockout_simulator.py",
 ]
 
 
