@@ -13,6 +13,7 @@ jobs:
 
     env:
       THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+      PYTHONPATH: ${{ github.workspace }}
 
     steps:
       - name: Checkout repository
