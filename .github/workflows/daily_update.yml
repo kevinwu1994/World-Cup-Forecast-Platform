@@ -7,6 +7,9 @@ on:
     - cron: "0 19 * * *"   # 12:00 PDT
     - cron: "30 5 * * *"   # 22:30 PDT
 
+permissions:
+  contents: write
+  
 jobs:
   update-forecast:
     runs-on: ubuntu-latest
