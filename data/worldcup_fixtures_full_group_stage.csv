@@ -1,0 +1,73 @@
+match_id,date,group,home_team,away_team
+66456904,2026-06-11,A,Mexico,South Africa
+66456906,2026-06-11,A,South Korea,Czechia
+66456910,2026-06-18,A,Czechia,South Africa
+66456908,2026-06-18,A,Mexico,South Korea
+66456912,2026-06-24,A,Czechia,Mexico
+66456914,2026-06-24,A,South Africa,South Korea
+66456916,2026-06-12,B,Canada,Bosnia and Herzegovina
+66456918,2026-06-13,B,Qatar,Switzerland
+66456922,2026-06-18,B,Switzerland,Bosnia and Herzegovina
+66456920,2026-06-18,B,Canada,Qatar
+66456924,2026-06-24,B,Switzerland,Canada
+66456926,2026-06-24,B,Bosnia and Herzegovina,Qatar
+66456928,2026-06-13,C,Brazil,Morocco
+66456930,2026-06-13,C,Haiti,Scotland
+66456934,2026-06-19,C,Scotland,Morocco
+66456932,2026-06-19,C,Brazil,Haiti
+66456936,2026-06-24,C,Scotland,Brazil
+66456938,2026-06-24,C,Morocco,Haiti
+66456940,2026-06-12,D,United States,Paraguay
+66456942,2026-06-14,D,Australia,Turkey
+66456944,2026-06-19,D,United States,Australia
+66456946,2026-06-19,D,Turkey,Paraguay
+66456948,2026-06-25,D,Turkey,United States
+66456950,2026-06-25,D,Paraguay,Australia
+66457070,2026-06-14,E,Germany,Curacao
+66457072,2026-06-14,E,Ivory Coast,Ecuador
+66457074,2026-06-20,E,Germany,Ivory Coast
+66457076,2026-06-20,E,Ecuador,Curacao
+66457078,2026-06-25,E,Ecuador,Germany
+66457080,2026-06-25,E,Curacao,Ivory Coast
+66456968,2026-06-14,F,Netherlands,Japan
+66456970,2026-06-14,F,Sweden,Tunisia
+66456972,2026-06-20,F,Netherlands,Sweden
+66456974,2026-06-21,F,Tunisia,Japan
+66456976,2026-06-25,F,Tunisia,Netherlands
+66456978,2026-06-25,F,Japan,Sweden
+66456982,2026-06-15,G,Belgium,Egypt
+66456984,2026-06-15,G,Iran,New Zealand
+66456986,2026-06-21,G,Belgium,Iran
+66456988,2026-06-21,G,New Zealand,Egypt
+66456990,2026-06-26,G,New Zealand,Belgium
+66456992,2026-06-26,G,Egypt,Iran
+66456994,2026-06-15,H,Spain,Cape Verde
+66456996,2026-06-15,H,Saudi Arabia,Uruguay
+66456998,2026-06-21,H,Spain,Saudi Arabia
+66457000,2026-06-21,H,Uruguay,Cape Verde
+66457002,2026-06-26,H,Uruguay,Spain
+66457004,2026-06-26,H,Cape Verde,Saudi Arabia
+66457006,2026-06-16,I,France,Senegal
+66457008,2026-06-16,I,Iraq,Norway
+66457010,2026-06-22,I,France,Iraq
+66457012,2026-06-22,I,Norway,Senegal
+66457014,2026-06-26,I,Norway,France
+66457016,2026-06-26,I,Senegal,Iraq
+66457018,2026-06-16,J,Argentina,Algeria
+66457020,2026-06-17,J,Austria,Jordan
+66457022,2026-06-22,J,Argentina,Austria
+66457024,2026-06-22,J,Jordan,Algeria
+66457026,2026-06-27,J,Jordan,Argentina
+66457028,2026-06-27,J,Algeria,Austria
+66457030,2026-06-17,K,Portugal,DR Congo
+66457032,2026-06-17,K,Uzbekistan,Colombia
+66457034,2026-06-23,K,Portugal,Uzbekistan
+66457036,2026-06-23,K,Colombia,DR Congo
+66457038,2026-06-27,K,Colombia,Portugal
+66457040,2026-06-27,K,DR Congo,Uzbekistan
+66457042,2026-06-17,L,England,Croatia
+66457044,2026-06-17,L,Ghana,Panama
+66457046,2026-06-23,L,England,Ghana
+66457048,2026-06-23,L,Panama,Croatia
+66457050,2026-06-27,L,Panama,England
+66457052,2026-06-27,L,Croatia,Ghana

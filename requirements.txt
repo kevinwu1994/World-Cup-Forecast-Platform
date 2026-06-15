@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+scipy
+scikit-learn
+requests
+pydantic
+pyyaml
+python-dotenv
+plotly
+matplotlib
+statsbombpy

@@ -1,0 +1,41 @@
+key,group,title,description,active,has_outrights
+americanfootball_cfl,American Football,CFL,Canadian Football League,True,False
+americanfootball_ncaaf,American Football,NCAAF,US College Football,True,False
+americanfootball_ncaaf_championship_winner,American Football,NCAAF Championship Winner,US College Football Championship Winner,True,True
+americanfootball_nfl,American Football,NFL,US Football,True,False
+americanfootball_nfl_preseason,American Football,NFL Preseason,US Football,True,False
+americanfootball_nfl_super_bowl_winner,American Football,NFL Super Bowl Winner,Super Bowl Winner 2026/2027,True,True
+aussierules_afl,Aussie Rules,AFL,Aussie Football,True,False
+baseball_milb,Baseball,MiLB,Minor League Baseball,True,False
+baseball_mlb,Baseball,MLB,Major League Baseball,True,False
+baseball_mlb_world_series_winner,Baseball,MLB World Series Winner,World Series Winner 2026,True,True
+baseball_ncaa,Baseball,NCAA Baseball,US College Baseball,True,False
+basketball_wnba,Basketball,WNBA,US Basketball,True,False
+boxing_boxing,Boxing,Boxing,Boxing Bouts,True,False
+cricket_international_t20,Cricket,International Twenty20,International Twenty20,True,False
+cricket_odi,Cricket,One Day Internationals,One Day Internationals,True,False
+cricket_test_match,Cricket,Test Matches,International Test Matches,True,False
+golf_the_open_championship_winner,Golf,The Open Winner,2026 Winner,True,True
+golf_us_open_winner,Golf,US Open Winner,2026 Winner,True,True
+icehockey_ahl,Ice Hockey,AHL,American Hockey League,True,False
+icehockey_nhl,Ice Hockey,NHL,US Ice Hockey,True,False
+icehockey_nhl_championship_winner,Ice Hockey,NHL Championship Winner,Stanley Cup Winner 2025/2026,True,True
+lacrosse_pll,Lacrosse,PLL,Premier Lacrosse League,True,False
+mma_mixed_martial_arts,Mixed Martial Arts,MMA,Mixed Martial Arts,True,False
+politics_us_presidential_election_winner,Politics,US Presidential Elections Winner,2028 US Presidential Election Winner,True,True
+rugbyleague_nrl,Rugby League,NRL,Aussie Rugby League,True,False
+rugbyleague_nrl_state_of_origin,Rugby League,State of Origin,State of Origin series,True,False
+soccer_brazil_serie_b,Soccer,Brazil Série B,Campeonato Brasileiro Série B,True,False
+soccer_chile_campeonato,Soccer,Primera División - Chile,Campeonato Chileno,True,False
+soccer_china_superleague,Soccer,Super League - China,Chinese Soccer,True,False
+soccer_conmebol_copa_libertadores,Soccer,Copa Libertadores,CONMEBOL Copa Libertadores,True,False
+soccer_conmebol_copa_sudamericana,Soccer,Copa Sudamericana,CONMEBOL Copa Sudamericana,True,False
+soccer_fifa_world_cup,Soccer,FIFA World Cup,FIFA World Cup 2026,True,False
+soccer_fifa_world_cup_winner,Soccer,FIFA World Cup Winner,FIFA World Cup Winner 2026,True,True
+soccer_finland_veikkausliiga,Soccer,Veikkausliiga - Finland,Finnish  Soccer,True,False
+soccer_germany_dfb_pokal,Soccer,DFB-Pokal,German Soccer,True,False
+soccer_league_of_ireland,Soccer,League of Ireland,Airtricity League Premier Division,True,False
+soccer_norway_eliteserien,Soccer,Eliteserien - Norway,Norwegian Soccer,True,False
+soccer_spain_segunda_division,Soccer,La Liga 2 - Spain,Spanish Soccer,True,False
+soccer_sweden_allsvenskan,Soccer,Allsvenskan - Sweden,Swedish Soccer,True,False
+soccer_sweden_superettan,Soccer,Superettan - Sweden,Swedish Soccer,True,False

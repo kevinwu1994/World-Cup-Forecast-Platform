@@ -1,0 +1,13 @@
+home_team,away_team,actual_score,actual_result,matched,predicted_result,result_hit,top1_score,top2_score,top3_score,top4_score,top5_score,top6_score,top7_score,top8_score,top1_hit,top3_hit,top5_hit,top8_hit
+South Korea,Czechia,2-1,HOME,True,HOME,True,1-1,1-0,2-1,2-0,0-1,0-0,1-2,2-2,False,True,True,True
+Mexico,South Africa,2-0,HOME,True,HOME,True,1-0,2-0,1-1,2-1,3-0,0-0,3-1,0-1,False,True,True,True
+Canada,Bosnia and Herzegovina,1-1,DRAW,True,HOME,False,1-1,1-0,2-1,2-0,0-1,1-2,0-0,2-2,True,True,True,True
+United States,Paraguay,4-1,HOME,True,HOME,True,1-1,1-0,2-1,2-0,0-1,0-0,1-2,3-1,False,False,False,False
+Qatar,Switzerland,1-1,DRAW,True,AWAY,False,0-1,0-2,1-1,1-2,0-3,0-0,1-3,1-0,False,True,True,True
+Brazil,Morocco,1-1,DRAW,True,HOME,False,1-1,1-0,2-1,2-0,0-1,0-0,1-2,3-1,True,True,True,True
+Haiti,Scotland,0-1,AWAY,True,AWAY,True,0-1,1-1,0-2,1-2,0-0,1-0,0-3,1-3,True,True,True,True
+Australia,Turkey,2-0,HOME,True,AWAY,False,1-1,0-1,1-2,1-0,2-1,0-2,0-0,2-2,False,False,False,False
+Germany,Curacao,7-1,HOME,True,HOME,True,2-0,3-0,1-0,4-0,2-1,3-1,1-1,0-0,False,False,False,False
+Netherlands,Japan,2-2,DRAW,True,HOME,False,1-1,1-0,2-1,2-0,0-1,0-0,1-2,2-2,False,False,False,True
+Ivory Coast,Ecuador,1-0,HOME,True,AWAY,False,1-1,0-1,1-2,1-0,2-1,0-2,0-0,2-2,False,False,True,True
+Sweden,Tunisia,5-1,HOME,True,HOME,True,1-1,1-0,2-1,2-0,0-1,0-0,1-2,3-1,False,False,False,False
