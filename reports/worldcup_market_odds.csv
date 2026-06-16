@@ -1,22 +1,21 @@
 home_team,away_team,home_odds,draw_odds,away_odds
-France,Senegal,1.48,4.5,6.25
 Iraq,Norway,12.5,6.75,1.21
 Argentina,Algeria,1.43,4.6,6.75
 Austria,Jordan,1.38,5.23,8.85
-Portugal,DR Congo,1.28,5.6,11.0
+Portugal,DR Congo,1.27,5.7,11.0
 England,Croatia,1.71,3.7,4.8
 Ghana,Panama,2.15,3.2,3.4
 Uzbekistan,Colombia,9.5,4.8,1.34
-Czech Republic,South Africa,1.7,3.8,5.0
+Czech Republic,South Africa,1.74,3.7,4.9
 Switzerland,Bosnia & Herzegovina,1.55,4.0,6.25
-Canada,Qatar,1.28,5.6,11.0
+Canada,Qatar,1.26,5.8,11.5
 Mexico,South Korea,2.02,3.2,4.0
 USA,Australia,1.57,4.4,5.4
 Scotland,Morocco,5.5,3.6,1.7
 Brazil,Haiti,1.09,11.0,25.0
 Turkey,Paraguay,2.06,3.3,3.85
-Netherlands,Sweden,1.71,3.75,5.0
-Germany,Ivory Coast,1.51,4.35,6.25
+Netherlands,Sweden,1.72,3.75,5.0
+Germany,Ivory Coast,1.49,4.4,6.5
 Ecuador,Curaçao,1.09,11.0,26.0
 Tunisia,Japan,7.5,4.1,1.49
 Spain,Saudi Arabia,1.1,10.0,26.0
@@ -25,7 +24,7 @@ Uruguay,Cape Verde,1.47,4.2,7.5
 New Zealand,Egypt,5.5,3.8,1.65
 Argentina,Austria,1.62,3.9,5.6
 France,Iraq,1.11,9.5,25.0
-Norway,Senegal,2.17,3.4,3.4
+Norway,Senegal,2.38,3.4,2.95
 Jordan,Algeria,6.75,4.3,1.49
 Portugal,Uzbekistan,1.24,6.25,12.5
 England,Ghana,1.32,5.3,10.0
@@ -35,8 +34,8 @@ Bosnia & Herzegovina,Qatar,1.56,4.1,6.0
 Switzerland,Canada,2.1,3.4,3.6
 Scotland,Brazil,7.0,4.9,1.43
 Morocco,Haiti,1.29,5.8,10.0
-Czech Republic,Mexico,4.7,3.5,1.8
-South Africa,South Korea,5.8,4.3,1.57
+Czech Republic,Mexico,4.6,3.5,1.8
+South Africa,South Korea,5.5,4.3,1.57
 Curaçao,Ivory Coast,18.0,7.5,1.15
 Ecuador,Germany,5.1,3.9,1.69
 Japan,Sweden,2.05,3.5,3.6
@@ -44,11 +43,11 @@ Tunisia,Netherlands,8.0,5.4,1.33
 Paraguay,Australia,2.2,3.3,3.3
 Turkey,USA,2.8,3.7,2.35
 Norway,France,4.5,3.7,1.8
-Senegal,Iraq,1.42,4.5,7.5
-Cape Verde,Saudi Arabia,2.75,3.6,2.45
+Senegal,Iraq,1.34,4.9,9.5
+Cape Verde,Saudi Arabia,2.8,3.6,2.4
 Uruguay,Spain,5.8,4.0,1.61
 New Zealand,Belgium,12.0,6.5,1.22
-Egypt,Iran,2.25,3.1,3.5
+Egypt,Iran,2.1,3.2,3.8
 Croatia,Ghana,1.62,3.9,5.8
 Panama,England,9.5,6.5,1.26
 Colombia,Portugal,3.6,3.35,2.16
