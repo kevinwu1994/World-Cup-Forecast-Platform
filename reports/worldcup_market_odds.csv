@@ -1,29 +1,27 @@
 home_team,away_team,home_odds,draw_odds,away_odds
-Saudi Arabia,Uruguay,7.5,4.2,1.44
-Iran,New Zealand,1.77,3.3,5.0
-France,Senegal,1.48,4.5,6.25
+France,Senegal,1.48,4.4,6.25
 Iraq,Norway,13.0,6.75,1.2
 Argentina,Algeria,1.4,4.75,7.75
-Austria,Jordan,1.35,5.43,9.0
+Austria,Jordan,1.36,5.48,9.0
 Portugal,DR Congo,1.27,5.7,11.0
 England,Croatia,1.71,3.7,4.8
 Ghana,Panama,2.15,3.2,3.4
-Uzbekistan,Colombia,9.5,4.7,1.36
+Uzbekistan,Colombia,9.5,4.8,1.36
 Czech Republic,South Africa,1.74,3.75,4.75
 Switzerland,Bosnia & Herzegovina,1.54,4.1,6.4
 Canada,Qatar,1.25,6.0,12.5
-Mexico,South Korea,1.97,3.3,4.1
-USA,Australia,1.59,4.3,5.4
-Scotland,Morocco,5.25,3.55,1.73
-Brazil,Haiti,1.1,10.5,25.0
-Turkey,Paraguay,2.02,3.4,3.8
-Netherlands,Sweden,1.67,3.85,5.2
-Germany,Ivory Coast,1.54,4.2,6.1
-Ecuador,Curaçao,1.09,11.0,25.0
+Mexico,South Korea,2.0,3.25,4.1
+USA,Australia,1.59,4.4,5.2
+Scotland,Morocco,5.6,3.65,1.68
+Brazil,Haiti,1.09,11.5,26.0
+Turkey,Paraguay,2.04,3.35,3.85
+Netherlands,Sweden,1.67,3.9,5.1
+Germany,Ivory Coast,1.53,4.3,6.1
+Ecuador,Curaçao,1.09,11.0,26.0
 Tunisia,Japan,7.0,4.1,1.51
 Spain,Saudi Arabia,1.1,10.0,26.0
-Belgium,Iran,1.38,4.7,7.9
-Uruguay,Cape Verde,1.47,4.3,7.5
+Belgium,Iran,1.4,4.7,7.6
+Uruguay,Cape Verde,1.5,4.1,7.0
 New Zealand,Egypt,5.25,3.65,1.71
 Argentina,Austria,1.62,3.9,5.6
 France,Iraq,1.11,9.5,23.0
@@ -47,9 +45,9 @@ Paraguay,Australia,2.1,3.3,3.6
 Turkey,USA,2.8,3.7,2.35
 Norway,France,4.5,3.7,1.8
 Senegal,Iraq,1.42,4.5,7.5
-Cape Verde,Saudi Arabia,2.4,3.6,2.75
+Cape Verde,Saudi Arabia,2.75,3.6,2.4
 Uruguay,Spain,5.8,4.0,1.61
-New Zealand,Belgium,11.0,5.6,1.28
+New Zealand,Belgium,12.0,6.5,1.22
 Egypt,Iran,2.25,3.1,3.5
 Croatia,Ghana,1.62,3.9,5.8
 Panama,England,11.0,6.0,1.26
