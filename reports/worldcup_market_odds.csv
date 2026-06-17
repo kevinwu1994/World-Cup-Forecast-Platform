@@ -1,10 +1,9 @@
 home_team,away_team,home_odds,draw_odds,away_odds
-England,Croatia,1.98,2.6,5.75
-Ghana,Panama,2.25,3.1,3.25
-Uzbekistan,Colombia,9.5,4.7,1.37
-Czech Republic,South Africa,1.74,3.7,4.9
-Switzerland,Bosnia & Herzegovina,1.54,4.1,6.5
-Canada,Qatar,1.26,5.8,12.0
+Ghana,Panama,2.95,2.6,2.9
+Uzbekistan,Colombia,9.0,4.6,1.37
+Czech Republic,South Africa,1.76,3.7,4.75
+Switzerland,Bosnia & Herzegovina,1.5,4.25,6.75
+Canada,Qatar,1.27,5.6,12.0
 Mexico,South Korea,2.0,3.4,3.9
 USA,Australia,1.59,4.4,5.2
 Scotland,Morocco,5.6,3.6,1.68
@@ -23,10 +22,10 @@ France,Iraq,1.09,11.0,26.0
 Norway,Senegal,2.32,3.45,3.0
 Jordan,Algeria,6.0,4.0,1.57
 Portugal,Uzbekistan,1.22,6.5,14.0
-England,Ghana,1.32,5.3,10.0
+England,Ghana,1.25,5.8,12.0
 Panama,Croatia,6.4,3.85,1.56
 Colombia,DR Congo,1.5,4.1,7.0
-Bosnia & Herzegovina,Qatar,1.56,4.2,6.0
+Bosnia & Herzegovina,Qatar,1.57,4.0,6.0
 Switzerland,Canada,2.1,3.4,3.6
 Scotland,Brazil,7.0,4.8,1.45
 Morocco,Haiti,1.29,5.8,10.0
@@ -47,6 +46,6 @@ Egypt,Iran,2.1,3.2,3.8
 Croatia,Ghana,1.62,3.9,5.8
 Panama,England,11.0,6.0,1.26
 Colombia,Portugal,3.55,3.5,2.1
-DR Congo,Uzbekistan,2.1,3.2,3.8
+DR Congo,Uzbekistan,2.15,3.3,3.5
 Algeria,Austria,3.0,3.1,2.45
 Jordan,Argentina,15.0,6.5,1.18
