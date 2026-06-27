@@ -1,6 +1,4 @@
 event_id,commence_time,home_team,away_team,completed,home_score,away_score,last_update
-512ac18beb5aa936a59f7ea3e497ada2,2026-06-24T19:00:00Z,Bosnia and Herzegovina,Qatar,True,3,1,2026-06-27T10:27:18Z
-c9ef5822ee64fd5275f7c73251bb56c7,2026-06-24T19:00:00Z,Switzerland,Canada,True,2,1,2026-06-27T10:27:18Z
 d1279ce7f33136a33e99ad442fc855e8,2026-06-24T22:00:00Z,Morocco,Haiti,True,4,2,2026-06-27T10:27:18Z
 885ba95805db310a7bcc3fb1a7a6dd28,2026-06-24T22:01:00Z,Scotland,Brazil,True,0,3,2026-06-27T10:27:18Z
 5993bd5196ca09f83990f0c3261e442e,2026-06-25T01:00:00Z,Czechia,Mexico,True,0,3,2026-06-27T10:27:18Z

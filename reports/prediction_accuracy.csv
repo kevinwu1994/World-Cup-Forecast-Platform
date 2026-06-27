@@ -47,8 +47,8 @@ Portugal,Uzbekistan,5-0,HOME,False,,False,,,,,,,,,False,False,False,False
 England,Ghana,0-0,DRAW,False,,False,,,,,,,,,False,False,False,False
 Panama,Croatia,0-1,AWAY,False,,False,,,,,,,,,False,False,False,False
 Colombia,DR Congo,1-0,HOME,False,,False,,,,,,,,,False,False,False,False
-Bosnia and Herzegovina,Qatar,3-1,HOME,True,AWAY,False,1-1,0-1,1-0,1-2,2-1,0-0,0-2,2-0,False,False,False,False
-Switzerland,Canada,2-1,HOME,True,HOME,True,1-0,2-0,1-1,2-1,3-0,0-0,3-1,0-1,False,False,True,True
+Bosnia and Herzegovina,Qatar,3-1,HOME,False,,False,,,,,,,,,False,False,False,False
+Switzerland,Canada,2-1,HOME,False,,False,,,,,,,,,False,False,False,False
 Morocco,Haiti,4-2,HOME,True,HOME,True,2-0,1-0,3-0,4-0,2-1,0-0,1-1,3-1,False,False,False,False
 Scotland,Brazil,0-3,AWAY,True,AWAY,True,0-2,0-1,0-3,0-4,1-2,0-0,1-1,1-3,False,True,True,True
 Czechia,Mexico,0-3,AWAY,True,AWAY,True,0-1,1-1,0-2,1-2,0-0,1-0,0-3,1-3,False,False,False,True
