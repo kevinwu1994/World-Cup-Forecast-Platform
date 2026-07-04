@@ -76,11 +76,14 @@ Brazil,Japan,2-1,HOME,False,,False,,,,,,,,,False,False,False,False
 Germany,Paraguay,1-1,DRAW,False,,False,,,,,,,,,False,False,False,False
 Netherlands,Morocco,1-1,DRAW,False,,False,,,,,,,,,False,False,False,False
 Ivory Coast,Norway,1-2,AWAY,False,,False,,,,,,,,,False,False,False,False
-France,Sweden,3-0,HOME,True,HOME,True,1-0,2-0,1-1,2-1,3-0,0-0,3-1,0-1,False,False,True,True
-Mexico,Ecuador,2-0,HOME,True,HOME,True,1-1,1-0,2-1,0-1,2-0,1-2,0-0,2-2,False,False,True,True
+France,Sweden,3-0,HOME,False,,False,,,,,,,,,False,False,False,False
+Mexico,Ecuador,2-0,HOME,False,,False,,,,,,,,,False,False,False,False
 England,DR Congo,2-1,HOME,True,HOME,True,2-0,3-0,1-0,4-0,2-1,3-1,1-1,5-0,False,False,True,True
 Belgium,Senegal,3-2,HOME,True,HOME,True,1-1,1-0,2-1,2-0,0-1,0-0,1-2,3-1,False,False,False,False
 United States,Bosnia and Herzegovina,2-0,HOME,True,HOME,True,2-0,1-0,3-0,2-1,1-1,0-0,3-1,4-0,True,True,True,True
 Spain,Austria,3-0,HOME,True,HOME,True,1-0,2-0,1-1,2-1,3-0,0-0,3-1,0-1,False,False,True,True
 Portugal,Croatia,2-1,HOME,True,HOME,True,1-1,1-0,2-1,2-0,0-1,1-2,0-0,2-2,False,True,True,True
 Switzerland,Algeria,2-0,HOME,True,HOME,True,1-0,2-0,1-1,2-1,0-0,3-0,0-1,3-1,False,True,True,True
+Australia,Egypt,1-1,DRAW,True,HOME,False,1-1,1-0,2-1,0-1,1-2,2-0,0-0,2-2,True,True,True,True
+Argentina,Cape Verde,3-2,HOME,True,HOME,True,2-0,3-0,1-0,4-0,2-1,5-0,3-1,1-1,False,False,False,False
+Colombia,Ghana,1-0,HOME,True,HOME,True,2-0,1-0,3-0,2-1,1-1,0-0,4-0,3-1,False,True,True,True
