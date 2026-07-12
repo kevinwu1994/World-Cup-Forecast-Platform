@@ -1,6 +1,7 @@
 event_id,commence_time,home_team,away_team,completed,home_score,away_score,last_update
-b6e926d7f026782b9cab2fa02b823d92,2026-07-09T20:00:00Z,France,Morocco,True,2,0,2026-07-11T02:28:05Z
-fca257de4583bd4bc592e8b2a8f24ad7,2026-07-10T19:00:00Z,Spain,Belgium,True,2,1,2026-07-11T02:28:05Z
-e66e4478b739fa0657a7a11235e1fcee,2026-07-11T21:00:00Z,Norway,England,False,,,2026-07-11T02:28:05Z
-200d9cd5eda092c7eb778cc104cd2fd2,2026-07-12T01:00:00Z,Argentina,Switzerland,False,,,2026-07-11T02:28:05Z
-f9aa13a662d1658e5a02cfc06d6a2d73,2026-07-14T19:00:00Z,France,Spain,False,,,
+b6e926d7f026782b9cab2fa02b823d92,2026-07-09T20:00:00Z,France,Morocco,True,2,0,2026-07-12T02:08:30Z
+fca257de4583bd4bc592e8b2a8f24ad7,2026-07-10T19:00:00Z,Spain,Belgium,True,2,1,2026-07-12T02:08:30Z
+e66e4478b739fa0657a7a11235e1fcee,2026-07-11T21:01:00Z,Norway,England,True,1,2,2026-07-12T04:05:39Z
+200d9cd5eda092c7eb778cc104cd2fd2,2026-07-12T01:00:00Z,Argentina,Switzerland,True,3,1,2026-07-12T04:05:39Z
+f9aa13a662d1658e5a02cfc06d6a2d73,2026-07-14T19:00:00Z,France,Spain,False,,,2026-07-12T07:39:15Z
+ced22494ae0bbb8cc4f7108bf6f493df,2026-07-15T19:00:00Z,England,Argentina,False,,,2026-07-12T07:39:15Z
