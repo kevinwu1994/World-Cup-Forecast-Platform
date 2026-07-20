@@ -2,7 +2,7 @@
 
 ### Final Tournament Analytics & Model Evaluation
 
-An end-to-end quantitative football forecasting project built with **ELO team-strength modeling**, **Expected Goals (xG)**, **Poisson score forecasting**, **market probability calibration**, and **Monte Carlo tournament simulation**.
+An end-to-end quantitative football forecasting project built with **ELO team-strength modeling**, **expected-goals-style scoring intensities**, **Poisson score forecasting**, **market-probability adjustment**, and **Monte Carlo tournament simulation**.
 
 The platform operated as a live forecasting system during the tournament. With the tournament complete, it now serves as a permanent research archive containing the original pre-match forecasts, final results, tournament progression, and post-tournament model evaluation.
 
@@ -25,6 +25,60 @@ The final dashboard contains nine research and archive views:
 - Complete tournament results
 - Final model evaluation
 - Archived model-versus-market analysis
+
+## Project Motivation
+
+International tournament forecasting is a useful applied probability problem because the system must connect several layers of uncertainty:
+
+- latent team strength is not directly observable;
+- match scores are discrete, low-frequency outcomes;
+- draws require an explicit probability rather than a binary winner model;
+- a tournament path compounds uncertainty across group and knockout stages;
+- market odds contain information but also include bookmaker margin;
+- model quality must be evaluated using forecasts fixed before outcomes are known.
+
+The project objective was therefore not to produce a single deterministic bracket. It was to build a reproducible probability pipeline that converts pre-match information into internally consistent score, match-outcome, qualification, and championship distributions, then preserves those forecasts for ex-post evaluation.
+
+From a Financial Engineering perspective, the project emphasizes concepts that also appear in quantitative risk work: latent-state estimation, probability normalization, distributional forecasting, Monte Carlo scenario generation, calibration diagnostics, proper scoring rules, and strict separation of information available before and after an event.
+
+## Forecasting Architecture
+
+```text
+Team ELO ratings + tournament fixtures
+                    |
+                    v
+       Match-level scoring intensities
+          (home xG and away xG)
+                    |
+                    v
+       Independent Poisson score matrix
+                    |
+          +---------+---------+
+          |                   |
+          v                   v
+ Ranked exact scores    Model 1X2 probabilities
+                              |
+                              v
+                Market-implied probabilities
+                 (overround removed, if available)
+                              |
+                              v
+                    Adjusted 1X2 forecast
+                              |
+          +-------------------+-------------------+
+          |                                       |
+          v                                       v
+  Group-stage Monte Carlo              Knockout/tournament simulation
+          |                                       |
+          v                                       v
+ Qualification probabilities             Championship probabilities
+                              |
+                              v
+             Versioned reports + Streamlit dashboard
+                              |
+                              v
+              Post-tournament archive and evaluation
+```
 
 ## Final Dashboard
 
@@ -77,25 +131,141 @@ All recovered forecasts were matched with the completed tournament results to pr
 
 ## Quantitative Methodology
 
-### ELO team-strength modeling
+### 1. Information set and forecast timestamp
 
-ELO ratings quantify relative national-team strength and provide the foundation for matchup-level expectations.
+Each match forecast is associated with a fixture, two pre-match team ratings, and—when available—market odds. The final archive selects the earliest committed probability snapshot for each matchup from Git history. This point-in-time rule prevents a later dashboard refresh or known match result from replacing the original forecast.
 
-### Expected Goals estimation
+The unit of analysis is one match. The principal probabilistic target is the three-way result
 
-Offensive and defensive strength are translated into expected home and away scoring rates.
+```text
+Y ∈ {HOME, DRAW, AWAY}
+```
 
-### Poisson score forecasting
+with a secondary target consisting of the ranked exact-score distribution.
 
-Poisson distributions convert expected goals into ranked exact-score probabilities and home/draw/away outcome probabilities.
+### 2. ELO team-strength representation
 
-### Market probability calibration
+ELO ratings provide a compact pre-match representation of relative national-team strength. For teams `h` and `a`, the relevant signal is the rating difference
 
-Market-implied information is incorporated when available to calibrate the model probabilities and support model-versus-market research.
+```text
+ΔELO = ELO_h - ELO_a
+```
 
-### Monte Carlo tournament simulation
+The current implementation treats the ratings as external point-in-time inputs. It does not re-estimate the ELO update coefficient inside this repository, so ELO should be interpreted as an input feature rather than a model trained on the final tournament sample.
 
-The platform ran 10,000+ tournament simulations to estimate group qualification, knockout advancement, and championship probabilities.
+### 3. Expected-goals-style scoring intensities
+
+The ELO difference is mapped into match-level Poisson intensities:
+
+```text
+λ_home = clip(1.35 + ΔELO / 350, 0.40, 3.50)
+λ_away = clip(1.35 - ΔELO / 350, 0.40, 3.50)
+```
+
+These quantities are displayed as home and away xG because they represent expected scoring rates. More precisely, they are **ELO-derived scoring intensities**, not shot-level xG estimates trained on event data. The clipping bounds limit extreme forecasts and the symmetric construction implies a baseline total-goals expectation of 2.70 before clipping.
+
+### 4. Poisson score distribution
+
+Conditional on the scoring intensities, home and away goals are modeled as independent Poisson variables:
+
+```text
+H ~ Poisson(λ_home)
+A ~ Poisson(λ_away)
+
+P(H=h, A=a) = P(H=h) × P(A=a)
+```
+
+The implementation evaluates scorelines from 0 through 6 goals for each team. The resulting score matrix is ranked to produce the Top-1, Top-3, Top-5, Top-8, and Top-10 exact-score forecasts. Three-way match probabilities are obtained by summing cells where `h > a`, `h = a`, and `h < a`, followed by normalization over the represented score grid.
+
+### 5. Market-implied probabilities and linear pooling
+
+Decimal odds are converted to implied probabilities and normalized to remove the quoted overround:
+
+```text
+q_i = (1 / odds_i) / Σ_j(1 / odds_j)
+```
+
+When market data are available, the final match probabilities use a convex linear pool:
+
+```text
+p_adjusted = 0.80 × p_model + 0.20 × q_market
+```
+
+The three adjusted probabilities are normalized to sum to one. When odds are unavailable, the model probabilities are retained. This step is best described as **market adjustment or linear probability pooling**; it is not a fitted statistical calibration model. The archived model-versus-market page reports the divergence between the two probability sources for research comparison only.
+
+### 6. Group-stage Monte Carlo simulation
+
+The group-stage engine runs 10,000 simulations with a fixed random seed for reproducibility. For each simulated match, it samples a home/draw/away result from the adjusted 1X2 probabilities and generates a compatible scoreline using the Poisson intensities. Simulated tables apply points, goal difference, and goals scored; unresolved ties receive a random tie-breaker.
+
+Across simulations, the engine estimates first-place, second-place, qualification, third-place, and last-place probabilities, together with expected points and goal difference.
+
+### 7. Knockout and championship simulation
+
+The tournament simulator propagates uncertainty through the expanded knockout structure. Group-stage scorelines are simulated from the match intensities, 32 teams qualify, and knockout winners advance recursively. A tied knockout simulation is resolved using an ELO-strength probability as an approximation for extra time and penalties.
+
+The simulator records advancement frequencies at each round and estimates championship probability as
+
+```text
+P(champion = team i) ≈ championship count_i / 10,000
+```
+
+The pre-tournament champion ranking shown in the final archive is the preserved simulation output, not a probability recomputed after the champion was known.
+
+## Evaluation Design
+
+### Point-in-time archive construction
+
+The live APIs eventually stopped returning the full tournament. To avoid evaluating only the remaining matches, the archive builder traverses committed report versions and selects the earliest available pre-match snapshot for each normalized matchup. It then aligns home/away orientation and joins the preserved probabilities to the final results.
+
+This design provides a defensible audit trail: forecast values come from repository history, while realized outcomes come from the completed results archive. The final dashboard itself is static and does not rerun the model.
+
+### Three-way outcome hit rate
+
+The predicted class is the largest of the home, draw, and away probabilities. The reported 64.4% is the fraction of 104 archived matches for which that class equals the recorded result class. It is a descriptive hit rate, not sufficient by itself to establish probability quality.
+
+### Ranked exact-score hit rates
+
+For each match, the realized score is compared with the ranked Poisson score list. Top-k hit rate is
+
+```text
+Top-k hit rate = matches with realized score in first k forecasts / 104
+```
+
+The nested Top-1, Top-3, Top-5, and Top-8 metrics show how quickly the ranked distribution captures the realized score as coverage expands.
+
+### Multiclass Brier score
+
+For each match, the implementation calculates the unscaled three-class Brier score
+
+```text
+BS = Σ_c (p_c - y_c)²
+```
+
+and reports its mean across matches. Lower is better. Under this convention the score ranges from 0 to 2; it is not divided by the number of classes.
+
+### Multiclass log loss
+
+Log loss evaluates the probability assigned to the realized class:
+
+```text
+LL = -(1/N) Σ_i log(p_i,actual)
+```
+
+Lower is better, and confident incorrect forecasts receive a larger penalty. Together, Brier score and log loss assess the full probability vector rather than only the most likely class.
+
+## Assumptions and Limitations
+
+- The ELO-to-intensity mapping is a transparent heuristic, not a statistically estimated shot-level xG model.
+- Independent Poisson scoring omits within-match dependence, tactical state changes, red cards, injuries, and score effects.
+- The score grid is truncated at six goals per team; match-outcome probabilities are normalized over that represented grid.
+- The 80/20 market pool is a fixed modeling choice and was not optimized on a separate validation sample.
+- Market coverage is incomplete, so some matches use model-only probabilities.
+- Group tie-breaks and knockout resolution use reproducible approximations rather than every official competition rule.
+- The championship simulation uses a seeded approximation for the expanded knockout bracket rather than the final official FIFA mapping.
+- Recorded knockout scores may reflect extra time or penalty conventions, while the original 1X2 probabilities are closest to a regulation-time match model. Final evaluation metrics should therefore be read as descriptive archive diagnostics.
+- No naive baseline, bookmaker-only benchmark, calibration curve, confidence interval, or statistical significance test is currently reported. The results demonstrate an end-to-end forecasting workflow, not proof of universal model superiority.
+
+These limitations are intentionally documented so that observed results, model estimates, and methodological judgment remain separate.
 
 ## Final Tournament Coverage
 
