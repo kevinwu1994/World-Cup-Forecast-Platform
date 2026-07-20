@@ -2,14 +2,10 @@ name: Daily World Cup Forecast Update
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 13 * * *"   # 06:00 PDT
-    - cron: "0 19 * * *"   # 12:00 PDT
-    - cron: "30 5 * * *"   # 22:30 PDT
 
 permissions:
   contents: write
-  
+
 jobs:
   update-forecast:
     runs-on: ubuntu-latest
